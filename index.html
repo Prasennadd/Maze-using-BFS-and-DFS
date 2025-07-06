@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MAZE</title>
+
+    <link rel="stylesheet" href="public/styles.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse" style="border-radius: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" id="refresh-button">SHORTEST PATH</a>
+        </div>
+        <div class="head">
+        <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="pathfinding-algo" href="#">
+                        Algorithm
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!-- <li><a href="#" id="dijkstra">Dijkstra's</a></li> -->
+                        <!-- <li><a href="#" id="astar">A* search</a></li> -->
+                        <li><a href="#" id="bfs">Breadth First Search</a></li>
+                        <li><a href="#" id="dfs">Depth First Search</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="mazegeneration-algo" href="#">Puzzel Generation
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="random-maze">Maze</a></li>
+                        <!-- <li><a href="#" id="random-weighted-maze">Random Weighted Maze</a></li> -->
+                        <li><a href="#" id="backtracking-maze">Backtracking</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="btn" id="clear-board">Clear</a></li>
+                <!-- <li><a href="#" class="btn" id="clear-path">Clear Path</a></li> -->
+                <li><a href="#" class="btn" id="clear-weights">Clear Wall</a></li>
+            </ul>
+            <button class="btn btn-success navbar-btn" id="start" style="background-color: #018575;">
+                Search!
+            </button>
+            <!-- <ul class="nav navbar-nav navbar-right"> -->
+                <!-- <button type="button" class="btn btn-success navbar-btn" id="view-tutorial">View Tutorial</button> -->
+                <!-- <button type="button" class="btn btn-danger navbar-btn" id="weight">Weight</button> -->
+            <!-- </ul> -->
+        </div></div>
+    </nav>
+    
+    <div id="board">
+    </div>
+    <script src="public/board.js"></script>
+    <script src="public/index.js"></script>
+</body>
+
+</html>
