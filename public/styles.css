@@ -1,106 +1,58 @@
-#refresh-button {
-    font-size: 20px; /* Define a base font size */
-    transition: font-size 0.3s ease;
-}
-#refresh-button:hover {
-    font-size: 1.5em;
+/* Keep your existing styles, but make table adaptive */
+table {
+    background: rgb(238, 237, 237);
+    border-collapse: collapse;
+    width: auto; /* default desktop */
+    max-width: 100%;
+    margin: auto;
 }
 
-a{
-    color: #333333;
-    font-size: 17px;
-}
-.head{
-    display: flex;
-    justify-content: center;
-}
-body{
-    position: relative;
-}
-table{
-    background: rgb(238, 237, 237);
-}
-td{
+/* Make cells scale proportionally */
+td {
     border: 1px solid #d3d2d2;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-}
-td.wall{
-    animation-name: wall;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-td.weight{
-    background-image: url('./icons/weight.svg');
-    background-position: center;
-    animation-name: icons;
-    animation-duration: 1.0s;
-    animation-fill-mode: forwards;
-}
-td.start{
-    background-image: url('./icons/arrow.svg');
-    background-position: center;
-    animation-name: icons;
-    animation-duration: 3.0s;
-    animation-fill-mode: forwards;
-}
-td.end{
-    background-image: url('./icons/pin_point.svg');
-    background-position: center;
-    animation-name: icons;
-    animation-duration: 3.0s;
-    animation-fill-mode: forwards;
-}
-td.visited{
-    animation-name: visited;
-    animation-duration: 1.0s;
-    animation-fill-mode: forwards;
-}
-td.path{
-    animation-name: path;
-    animation-duration: 1.0s;
-    animation-fill-mode: forwards;
-}
-@keyframes wall{
-    0% {background-color: #696969; transform: scale(.3);}
-    50% {background-color: #696969; transform: scale(1.3); border: none}
-    100% {background-color: #333333; transform: scale(1.0); border: none}
-}
-@keyframes visited{
-    0% {background-color: #91beb9; 
-        /* transform: scale(.3);  */
-    /* background-color: #FFFF00; */
-}
-    25% {background-color: #298f83; 
-        /* transform: scale(.5); */
-    }
-    50% {background-color: #298f83; 
-        /* transform: scale(1.4);  */
-    }
-    75% {background-color: #298f83; 
-        /* transform: scale(1.1); */
-    }
-    100% {background-color: #018575; 
-        /* transform: scale(1.0); */
-    }
-
-}
-.path-cell {
-    animation: path 1s ease-in-out forwards;
+    width: 25px;
+    height: 25px;
 }
 
-@keyframes path {
-    0%   { background-color: #f1a5a5; }
-    50%  { background-color: #920505; }
-    100% { background-color: #920505; }
-}
-@keyframes icons{
-    0% {transform: scale(.3)}
-    50% {transform: scale(1.1)}
-    100% {transform: scale(1.)}
+/* Smaller devices */
+@media (max-width: 1024px) {
+    td {
+        width: 20px;
+        height: 20px;
+    }
 }
 
+@media (max-width: 768px) {
+    td {
+        width: 16px;
+        height: 16px;
+    }
+    #refresh-button {
+        font-size: 16px;
+    }
+    a {
+        font-size: 15px;
+    }
+}
 
+@media (max-width: 480px) {
+    td {
+        width: 12px;
+        height: 12px;
+    }
+    #refresh-button {
+        font-size: 14px;
+    }
+    a {
+        font-size: 14px;
+    }
+    .head {
+        flex-direction: column;
+        text-align: center;
+    }
+}
